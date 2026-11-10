@@ -1,6 +1,6 @@
 import { keyFingerprint } from './crypto';
 import { verificationCode, verificationUrl } from './docs';
-import { fmtDateTime } from './util';
+import { appUrl, fmtDateTime } from './util';
 import type { SignedDoc } from './types';
 
 export type Block =
@@ -97,7 +97,7 @@ export async function buildPdf(spec: PdfSpec): Promise<Blob> {
       pdf.text(`Documento firmado digitalmente por StockPOS · ${fmtDateTime(spec.doc.createdAt)}`, M, H - 62);
       pdf.text(`Código de verificación: ${code}   ·   Llave: ${fp}`, M, H - 50);
       pdf.text(`SHA-256: ${spec.doc.hash}`, M, H - 38);
-      pdf.text(`Verifica en ${location.origin}/verificar  ·  Página ${i} de ${pages}`, M, H - 26);
+      pdf.text(`Verifica en ${appUrl('verificar')}  ·  Página ${i} de ${pages}`, M, H - 26);
       pdf.addImage(qr, 'PNG', W - M - 52, H - 72, 52, 52);
     }
   }

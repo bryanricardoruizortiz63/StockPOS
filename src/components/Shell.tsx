@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { db } from '../lib/db';
 import { useActive } from '../lib/session';
-import { clsx } from '../lib/util';
+import { asset, clsx } from '../lib/util';
 import { Sheet } from './ui';
 import { ArchivePrompt } from './ArchivePrompt';
 
@@ -113,7 +113,7 @@ function Rail() {
   return (
     <aside className="rail sticky top-0 hidden h-dvh w-[76px] shrink-0 xl:w-60 flex-col bg-adoquin text-on-adoquin lg:flex">
       <div className="flex h-14 items-center gap-2.5 px-5 max-xl:justify-center max-xl:px-0">
-        <img src="/icon.svg" alt="" className="size-7 rounded-md" />
+        <img src={asset('icon.svg')} alt="" className="size-7 rounded-md" />
         <span className="text-lg font-bold tracking-[-0.01em] max-xl:sr-only">StockPOS</span>
       </div>
       <nav className="flex-1 overflow-y-auto px-3 pb-4" aria-label="Principal">
