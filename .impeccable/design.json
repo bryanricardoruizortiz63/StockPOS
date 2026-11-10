@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T00:00:00Z",
+  "title": "Design System: StockPOS",
+  "extensions": {
+    "colorMeta": {
+      "adoquin": {
+        "role": "primary",
+        "displayName": "Adoquín Pizarra",
+        "canonical": "#2b3a52",
+        "tonalRamp": [
+          "#030b1a",
+          "#1a273b",
+          "#37465d",
+          "#59677c",
+          "#7e8a9d",
+          "#a4afbf",
+          "#c9d2df",
+          "#e8eff9"
+        ]
+      },
+      "adoquin-deep": {
+        "role": "primary",
+        "displayName": "Adoquín Hondo",
+        "canonical": "#1f2b3f",
+        "tonalRamp": [
+          "#040b19",
+          "#1b273a",
+          "#3a4559",
+          "#5c6778",
+          "#808a99",
+          "#a7aebb",
+          "#cbd1db",
+          "#eaeff6"
+        ]
+      },
+      "adoquin-soft": {
+        "role": "primary",
+        "displayName": "Adoquín Suave",
+        "canonical": "#3b4c68",
+        "tonalRamp": [
+          "#030b1a",
+          "#1a273c",
+          "#354560",
+          "#576781",
+          "#7b8aa2",
+          "#a2afc3",
+          "#c7d2e3",
+          "#e6effd"
+        ]
+      },
+      "adoquin-line": {
+        "role": "primary",
+        "displayName": "Junta de Adoquín",
+        "canonical": "#4a5b78",
+        "tonalRamp": [
+          "#040b19",
+          "#1b263a",
+          "#37455f",
+          "#566783",
+          "#7b8aa4",
+          "#a1afc5",
+          "#c6d2e5",
+          "#e5efff"
+        ]
+      },
+      "on-adoquin": {
+        "role": "neutral",
+        "displayName": "Cal sobre Adoquín",
+        "canonical": "#f6f4ef",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#272625",
+          "#454543",
+          "#676664",
+          "#8a8986",
+          "#afaeaa",
+          "#d2d1cc",
+          "#f0eee9"
+        ]
+      },
+      "on-adoquin-2": {
+        "role": "neutral",
+        "displayName": "Cal en Adoquín 2",
+        "canonical": "#c4ccda",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#24272a",
+          "#42454b",
+          "#62666e",
+          "#848993",
+          "#a7aeba",
+          "#c9d1df",
+          "#e8effc"
+        ]
+      },
+      "cal": {
+        "role": "neutral",
+        "displayName": "Cal",
+        "canonical": "#f6f4ef",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#272625",
+          "#454543",
+          "#676664",
+          "#8a8986",
+          "#afaeaa",
+          "#d2d1cc",
+          "#f0eee9"
+        ]
+      },
+      "cal-2": {
+        "role": "neutral",
+        "displayName": "Cal Gastada",
+        "canonical": "#ece8df",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#272624",
+          "#464542",
+          "#686662",
+          "#8b8983",
+          "#b1aea7",
+          "#d4d1c8",
+          "#f2eee5"
+        ]
+      },
+      "cal-3": {
+        "role": "neutral",
+        "displayName": "Cal Vieja",
+        "canonical": "#e2ddd1",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272624",
+          "#474541",
+          "#686660",
+          "#8c8981",
+          "#b2aea4",
+          "#d5d1c5",
+          "#f3eee3"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Junta",
+        "canonical": "#d6d0c3",
+        "tonalRamp": [
+          "#0c0b09",
+          "#282623",
+          "#474540",
+          "#69665f",
+          "#8d8980",
+          "#b3ada2",
+          "#d6d0c3",
+          "#f3eee2"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Blanco Mostrador",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#1d2433",
+        "tonalRamp": [
+          "#060b16",
+          "#1f2635",
+          "#3e4553",
+          "#606673",
+          "#848994",
+          "#aaaeb7",
+          "#ced1d8",
+          "#eceef3"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Tinta 2",
+        "canonical": "#4a5468",
+        "tonalRamp": [
+          "#060b15",
+          "#1f2635",
+          "#3c4557",
+          "#5d6679",
+          "#81899b",
+          "#a6aebd",
+          "#cbd1de",
+          "#e9eff9"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Tinta 3",
+        "canonical": "#6b7486",
+        "tonalRamp": [
+          "#080b12",
+          "#212631",
+          "#3e4553",
+          "#5e6677",
+          "#81899a",
+          "#a6aebd",
+          "#cad1df",
+          "#e9effa"
+        ]
+      },
+      "bad": {
+        "role": "tertiary",
+        "displayName": "Rojo Alerta",
+        "canonical": "#b42318",
+        "tonalRamp": [
+          "#2b0000",
+          "#570000",
+          "#860000",
+          "#b7291d",
+          "#d75e4e",
+          "#f68c7c",
+          "#ffb6a7",
+          "#ffd8cb"
+        ]
+      },
+      "bad-deep": {
+        "role": "tertiary",
+        "displayName": "Rojo Alerta Hondo",
+        "canonical": "#912018"
+      },
+      "bad-wash": {
+        "role": "tertiary",
+        "displayName": "Rojo Alerta Lavado",
+        "canonical": "#fdecea",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#292625",
+          "#494443",
+          "#6b6463",
+          "#908685",
+          "#b7aba9",
+          "#dccdcb",
+          "#fbeae8"
+        ]
+      },
+      "warn": {
+        "role": "tertiary",
+        "displayName": "Ámbar Bajo",
+        "canonical": "#a15c07",
+        "tonalRamp": [
+          "#1e0200",
+          "#421900",
+          "#6a3500",
+          "#955300",
+          "#b9783c",
+          "#daa06e",
+          "#f8c69b",
+          "#ffe5c1"
+        ]
+      },
+      "warn-wash": {
+        "role": "tertiary",
+        "displayName": "Ámbar Bajo Lavado",
+        "canonical": "#fdf3dc",
+        "tonalRamp": [
+          "#0c0b09",
+          "#282622",
+          "#48453e",
+          "#6a665c",
+          "#8e897c",
+          "#b4ad9d",
+          "#d9d0bd",
+          "#f7eed7"
+        ]
+      },
+      "good": {
+        "role": "tertiary",
+        "displayName": "Verde Cuadre",
+        "canonical": "#1f7a4d",
+        "tonalRamp": [
+          "#001202",
+          "#003115",
+          "#00542f",
+          "#1e784c",
+          "#539b71",
+          "#82be99",
+          "#addfbf",
+          "#d0fbdf"
+        ]
+      },
+      "good-wash": {
+        "role": "tertiary",
+        "displayName": "Verde Cuadre Lavado",
+        "canonical": "#e3f3ea",
+        "tonalRamp": [
+          "#0a0c0b",
+          "#242726",
+          "#414644",
+          "#616864",
+          "#828c87",
+          "#a5b1ab",
+          "#c7d5cd",
+          "#e3f3ea"
+        ]
+      },
+      "facade-coral": {
+        "role": "secondary",
+        "displayName": "Fachada Coral",
+        "canonical": "#e58a70",
+        "tonalRamp": [
+          "#1a0401",
+          "#3e1b10",
+          "#673527",
+          "#925240",
+          "#c0715a",
+          "#ec937a",
+          "#ffbaa3",
+          "#ffdac5"
+        ]
+      },
+      "facade-coral-deep": {
+        "role": "secondary",
+        "displayName": "Fachada Coral Honda",
+        "canonical": "#a8432c",
+        "tonalRamp": [
+          "#240000",
+          "#4c0800",
+          "#782512",
+          "#a6422b",
+          "#c76c56",
+          "#e79682",
+          "#ffbdac",
+          "#ffdecf"
+        ]
+      },
+      "facade-coral-wash": {
+        "role": "secondary",
+        "displayName": "Fachada Coral Lavada",
+        "canonical": "#fbe9e3",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#292624",
+          "#494442",
+          "#6c6461",
+          "#918683",
+          "#b8aba6",
+          "#ddcdc8",
+          "#fceae4"
+        ]
+      },
+      "facade-mango": {
+        "role": "secondary",
+        "displayName": "Fachada Mango",
+        "canonical": "#f1b84a",
+        "tonalRamp": [
+          "#130900",
+          "#342300",
+          "#59400b",
+          "#81601c",
+          "#ac812d",
+          "#d8a440",
+          "#fec762",
+          "#ffe68f"
+        ]
+      },
+      "facade-mango-deep": {
+        "role": "secondary",
+        "displayName": "Fachada Mango Honda",
+        "canonical": "#8a5a0b"
+      },
+      "facade-mango-wash": {
+        "role": "secondary",
+        "displayName": "Fachada Mango Lavada",
+        "canonical": "#fdf1d8"
+      },
+      "facade-turquesa": {
+        "role": "secondary",
+        "displayName": "Fachada Turquesa",
+        "canonical": "#57bdb6",
+        "tonalRamp": [
+          "#000f0e",
+          "#002e2b",
+          "#144f4c",
+          "#2a736f",
+          "#429a94",
+          "#5ec1ba",
+          "#8fe3dc",
+          "#b5fff9"
+        ]
+      },
+      "facade-turquesa-deep": {
+        "role": "secondary",
+        "displayName": "Fachada Turquesa Honda",
+        "canonical": "#146b67"
+      },
+      "facade-turquesa-wash": {
+        "role": "secondary",
+        "displayName": "Fachada Turquesa Lavada",
+        "canonical": "#def3f1"
+      },
+      "facade-verdemar": {
+        "role": "secondary",
+        "displayName": "Fachada Verde Mar",
+        "canonical": "#74bb8e",
+        "tonalRamp": [
+          "#010f05",
+          "#102d1c",
+          "#284f37",
+          "#417354",
+          "#5c9972",
+          "#7bc094",
+          "#a5e2ba",
+          "#c7fed9"
+        ]
+      },
+      "facade-verdemar-deep": {
+        "role": "secondary",
+        "displayName": "Fachada Verde Mar Honda",
+        "canonical": "#2b6a43"
+      },
+      "facade-verdemar-wash": {
+        "role": "secondary",
+        "displayName": "Fachada Verde Mar Lavada",
+        "canonical": "#e2f2e7"
+      },
+      "facade-lila": {
+        "role": "secondary",
+        "displayName": "Fachada Lila",
+        "canonical": "#b19bd8",
+        "tonalRamp": [
+          "#0d0817",
+          "#2a2139",
+          "#4a3e5f",
+          "#6c5d87",
+          "#917eb2",
+          "#b7a1dd",
+          "#d9c6fc",
+          "#f6e5ff"
+        ]
+      },
+      "facade-lila-deep": {
+        "role": "secondary",
+        "displayName": "Fachada Lila Honda",
+        "canonical": "#634994"
+      },
+      "facade-lila-wash": {
+        "role": "secondary",
+        "displayName": "Fachada Lila Lavada",
+        "canonical": "#eee8f7"
+      },
+      "facade-rosa": {
+        "role": "secondary",
+        "displayName": "Fachada Rosa",
+        "canonical": "#ec9db0",
+        "tonalRamp": [
+          "#15060a",
+          "#381d24",
+          "#5e3842",
+          "#875562",
+          "#b37484",
+          "#e195a7",
+          "#ffb9ca",
+          "#ffd9e8"
+        ]
+      },
+      "facade-rosa-deep": {
+        "role": "secondary",
+        "displayName": "Fachada Rosa Honda",
+        "canonical": "#9e3753"
+      },
+      "facade-rosa-wash": {
+        "role": "secondary",
+        "displayName": "Fachada Rosa Lavada",
+        "canonical": "#fae6eb"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display (cifra)",
+        "purpose": "TOTAL y cambio: 44-64 px tabulares."
+      },
+      "headline": {
+        "displayName": "Título de página",
+        "purpose": "Encabezado de cada página de gestión."
+      },
+      "title": {
+        "displayName": "Título de contenedor",
+        "purpose": "Hojas (18 px) y paneles (16 px)."
+      },
+      "body": {
+        "displayName": "Cuerpo",
+        "purpose": "Texto de la app a 15 px."
+      },
+      "label": {
+        "displayName": "Etiqueta",
+        "purpose": "Campos, chips, segmentado, encabezados de tabla."
+      },
+      "figure": {
+        "displayName": "Cifra",
+        "purpose": "Precios de tile y estadísticas, tabulares."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lift",
+        "value": "0 1px 2px rgb(29 36 51 / 0.06), 0 6px 18px -8px rgb(29 36 51 / 0.18)",
+        "purpose": "Hover de tile, barra flotante del carrito, toasts."
+      },
+      {
+        "name": "sheet",
+        "value": "0 -8px 40px -12px rgb(29 36 51 / 0.35)",
+        "purpose": "Hojas de diálogo sobre velo rgb(31 43 63 / 0.45) con blur 2px."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Curva única de la app."
+      },
+      {
+        "name": "facade-repaint",
+        "value": "background-color 520ms",
+        "purpose": "Repintado de la franja al cambiar de tienda."
+      },
+      {
+        "name": "sheet-in",
+        "value": "260ms translateY(16px)→0",
+        "purpose": "Entrada de hojas."
+      },
+      {
+        "name": "pop",
+        "value": "240ms scale 0.96→1.02→1",
+        "purpose": "Contador de tile, cambio, venta completada."
+      },
+      {
+        "name": "press",
+        "value": "150ms scale(0.98)",
+        "purpose": "Presión de botones y tiles."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px (aparece el rail de 76 px)"
+      },
+      {
+        "name": "xl",
+        "value": "1280px (rail de 240 px con etiquetas)"
+      }
+    ],
+    "facades": {
+      "mechanism": "document.documentElement.dataset.facade = store.color; las clases leen --facade, --facade-deep, --facade-wash",
+      "stores": [
+        "coral",
+        "mango",
+        "turquesa",
+        "verdemar",
+        "lila",
+        "rosa"
+      ]
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal: adoquín con texto cal.",
+      "html": "<button class=\"ds-btn-primary\">Abrir turno</button>",
+      "css": ".ds-btn-primary { font-family: var(--font-sans, 'Figtree Variable', ui-sans-serif, system-ui, sans-serif); display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border:0; border-radius:12px; background:var(--color-adoquin,#2b3a52); color:var(--color-on-adoquin,#f6f4ef); font-size:15px; font-weight:600; cursor:pointer; transition:background-color 150ms, transform 150ms; } .ds-btn-primary:hover, .ds-btn-primary:active { background:var(--color-adoquin-deep,#1f2b3f); } .ds-btn-primary:active { transform:scale(0.98); } .ds-btn-primary:focus-visible { outline:2.5px solid var(--facade-deep,#a8432c); outline-offset:2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acciones de encabezado: blanco con anillo de junta.",
+      "html": "<button class=\"ds-btn-secondary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 15V3\"/><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m7 10 5 5 5-5\"/></svg>PDF</button>",
+      "css": ".ds-btn-secondary { font-family: var(--font-sans, 'Figtree Variable', ui-sans-serif, system-ui, sans-serif); display:inline-flex; align-items:center; gap:8px; height:44px; padding:0 16px; border:0; border-radius:12px; background:#fff; color:var(--color-ink,#1d2433); box-shadow:0 0 0 1px var(--color-line,#d6d0c3); font-size:15px; font-weight:600; cursor:pointer; transition:background-color 150ms, transform 150ms; } .ds-btn-secondary:hover { background:var(--color-cal-2,#ece8df); } .ds-btn-secondary:active { transform:scale(0.98); } .ds-btn-secondary:focus-visible { outline:2.5px solid var(--facade-deep,#a8432c); outline-offset:2px; }"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Acción destructiva.",
+      "html": "<button class=\"ds-btn-danger\">Eliminar</button>",
+      "css": ".ds-btn-danger { font-family: var(--font-sans, 'Figtree Variable', ui-sans-serif, system-ui, sans-serif); height:44px; padding:0 16px; border:0; border-radius:12px; background:var(--color-bad,#b42318); color:#fff; font-size:15px; font-weight:600; cursor:pointer; transition:background-color 150ms; } .ds-btn-danger:hover { background:#912018; } .ds-btn-danger:focus-visible { outline:2.5px solid var(--facade-deep,#a8432c); outline-offset:2px; }"
+    },
+    {
+      "name": "Pay Buttons",
+      "kind": "custom",
+      "refersTo": "pay-button",
+      "description": "Tres botones adoquín de 64 px al pie del carrito.",
+      "html": "<div class=\"ds-pay\"><button>Efectivo</button><button>ATH Móvil</button><button>Tarjeta</button></div>",
+      "css": ".ds-pay { font-family: var(--font-sans, 'Figtree Variable', ui-sans-serif, system-ui, sans-serif); display:grid; grid-template-columns:repeat(3,1fr); gap:8px; width:360px; } .ds-pay button { height:64px; border:0; border-radius:12px; background:var(--color-adoquin,#2b3a52); color:var(--color-on-adoquin,#f6f4ef); font:inherit; font-size:14px; font-weight:600; cursor:pointer; transition:background-color 150ms, transform 150ms; } .ds-pay button:hover { background:var(--color-adoquin-deep,#1f2b3f); } .ds-pay button:active { transform:scale(0.98); } .ds-pay button:focus-visible { outline:2.5px solid var(--facade-deep,#a8432c); outline-offset:2px; }"
+    },
+    {
+      "name": "Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo de 44 px; foco en fachada honda.",
+      "html": "<label class=\"ds-field\"><span>Fondo de caja inicial</span><input class=\"ds-input\" placeholder=\"0.00\" inputmode=\"decimal\"></label>",
+      "css": ".ds-field { font-family: var(--font-sans, 'Figtree Variable', ui-sans-serif, system-ui, sans-serif); display:flex; flex-direction:column; gap:6px; width:280px; } .ds-field span { font-size:14px; font-weight:600; color:var(--color-ink,#1d2433); } .ds-input { font:inherit; height:44px; padding:0 14px; border:0; border-radius:12px; background:#fff; color:var(--color-ink,#1d2433); box-shadow:0 0 0 1px var(--color-line,#d6d0c3); font-size:15px; font-variant-numeric:tabular-nums; caret-color:var(--facade-deep,#a8432c); } .ds-input::placeholder { color:var(--color-ink-3,#6b7486); } .ds-input:focus { outline:none; box-shadow:0 0 0 2px var(--facade-deep,#a8432c); }"
+    },
+    {
+      "name": "Category Chips",
+      "kind": "chip",
+      "refersTo": "chip-category",
+      "description": "Filtro de categorías; activa en adoquín.",
+      "html": "<div class=\"ds-chips\"><button class=\"on\">Todo</button><button>Bebidas</button><button>Café</button></div>",
+      "css": ".ds-chips { font-family: var(--font-sans, 'Figtree Variable', ui-sans-serif, system-ui, sans-serif); display:flex; gap:8px; } .ds-chips button { font:inherit; height:36px; padding:0 16px; border:0; border-radius:9999px; background:#fff; color:var(--color-ink-2,#4a5468); box-shadow:0 0 0 1px var(--color-line,#d6d0c3); font-size:14px; font-weight:600; cursor:pointer; transition:color 150ms; } .ds-chips button:hover { color:var(--color-ink,#1d2433); } .ds-chips button.on { background:var(--color-adoquin,#2b3a52); color:var(--color-on-adoquin,#f6f4ef); box-shadow:none; } .ds-chips button:focus-visible { outline:2.5px solid var(--facade-deep,#a8432c); outline-offset:2px; }"
+    },
+    {
+      "name": "Product Tile",
+      "kind": "card",
+      "refersTo": "product-tile",
+      "description": "Tile firma con toldo de fachada; en el carrito, anillo de fachada y contador.",
+      "html": "<div class=\"ds-tiles\"><button class=\"ds-tile\"><i></i><p>Arroz Goya grano largo 3 lb</p><div><b>$3.99</b><small>30 disp.</small></div></button><button class=\"ds-tile in\"><i></i><em>1</em><p>Café Yaucono 14 oz</p><div><b>$6.49</b><small class=\"low\">4 disp.</small></div></button></div>",
+      "css": ".ds-tiles { font-family: var(--font-sans, 'Figtree Variable', ui-sans-serif, system-ui, sans-serif); display:grid; grid-template-columns:repeat(2,176px); gap:12px; } .ds-tile { position:relative; display:flex; flex-direction:column; padding:0; border:0; overflow:hidden; border-radius:14px; background:#fff; color:var(--color-ink,#1d2433); box-shadow:0 0 0 1px rgb(214 208 195 / 0.7); text-align:left; font:inherit; cursor:pointer; transition:box-shadow 150ms, transform 150ms; } .ds-tile:hover { box-shadow:0 0 0 1px rgb(214 208 195 / 0.7), 0 1px 2px rgb(29 36 51 / 0.06), 0 6px 18px -8px rgb(29 36 51 / 0.18); } .ds-tile:active { transform:scale(0.98); } .ds-tile:focus-visible { outline:2.5px solid var(--facade-deep,#a8432c); outline-offset:2px; } .ds-tile.in { box-shadow:0 0 0 3px var(--facade,#e58a70); } .ds-tile i { display:block; height:6px; background:var(--facade,#e58a70); } .ds-tile em { position:absolute; top:8px; right:8px; min-width:28px; padding:2px 8px; border-radius:9999px; background:var(--facade,#e58a70); color:var(--color-ink,#1d2433); font-style:normal; font-size:14px; font-weight:700; text-align:center; } .ds-tile p { margin:12px 32px 0 12px; font-size:15px; font-weight:600; line-height:1.375; } .ds-tile div { display:flex; justify-content:space-between; align-items:flex-end; padding:8px 12px 12px; font-variant-numeric:tabular-nums; } .ds-tile b { font-size:20px; } .ds-tile small { font-size:12px; font-weight:600; color:var(--color-ink-3,#6b7486); } .ds-tile small.low { color:var(--color-warn,#a15c07); }"
+    },
+    {
+      "name": "Rail Navigation",
+      "kind": "nav",
+      "refersTo": "rail",
+      "description": "Rail adoquín; activo en cal con icono en fachada honda.",
+      "html": "<nav class=\"ds-rail\"><p>Tienda</p><a class=\"on\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"8\" cy=\"21\" r=\"1\"/><circle cx=\"19\" cy=\"21\" r=\"1\"/><path d=\"M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12\"/></svg>Vender</a><a href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 3v16a2 2 0 0 0 2 2h16\"/><path d=\"M7 16V9\"/><path d=\"M12 16V5\"/><path d=\"M17 16v-4\"/></svg>Reportes</a></nav>",
+      "css": ".ds-rail { font-family: var(--font-sans, 'Figtree Variable', ui-sans-serif, system-ui, sans-serif); width:240px; padding:12px; background:var(--color-adoquin,#2b3a52); display:flex; flex-direction:column; gap:2px; } .ds-rail p { margin:0; padding:0 12px 6px; font-size:12px; font-weight:600; color:rgb(196 204 218 / 0.8); } .ds-rail a { display:flex; align-items:center; gap:12px; height:40px; padding:0 12px; border-radius:8px; font-size:15px; font-weight:500; color:var(--color-on-adoquin-2,#c4ccda); text-decoration:none; transition:background-color 150ms, color 150ms; } .ds-rail a:hover { background:var(--color-adoquin-soft,#3b4c68); color:var(--color-on-adoquin,#f6f4ef); } .ds-rail a.on { background:var(--color-cal,#f6f4ef); color:var(--color-ink,#1d2433); } .ds-rail a.on svg { color:var(--facade-deep,#a8432c); } .ds-rail a:focus-visible { outline:2.5px solid var(--facade-deep,#a8432c); outline-offset:2px; }"
+    },
+    {
+      "name": "Facade Band",
+      "kind": "custom",
+      "refersTo": "facade-band",
+      "description": "Franja superior en color de fachada; se repinta al cambiar de tienda.",
+      "html": "<header class=\"ds-band\"><b>Colmado La Esquina</b><span>· IVU 11.5%</span><em><i></i>Turno abierto</em></header>",
+      "css": ".ds-band { font-family: var(--font-sans, 'Figtree Variable', ui-sans-serif, system-ui, sans-serif); display:flex; align-items:center; gap:10px; height:56px; padding:0 24px; width:560px; background:var(--facade,#e58a70); color:var(--color-ink,#1d2433); transition:background-color 520ms cubic-bezier(0.16,1,0.3,1); } .ds-band span { font-size:14px; font-weight:500; } .ds-band em { margin-left:auto; display:flex; align-items:center; gap:8px; height:36px; padding:0 12px; border-radius:9999px; background:rgb(255 255 255 / 0.55); font-style:normal; font-size:14px; font-weight:600; } .ds-band i { width:8px; height:8px; border-radius:9999px; background:var(--color-good,#1f7a4d); }"
+    },
+    {
+      "name": "Total Block",
+      "kind": "custom",
+      "refersTo": "panel",
+      "description": "TOTAL en cifras tabulares grandes sobre adoquín (pantalla Cobrar).",
+      "html": "<div class=\"ds-total\"><div class=\"r\"><span>Subtotal $4.59</span><span>IVU $0.53</span></div><div class=\"t\"><span>Total</span><b>$5.12</b></div></div>",
+      "css": ".ds-total { font-family: var(--font-sans, 'Figtree Variable', ui-sans-serif, system-ui, sans-serif); width:360px; padding:16px 20px; border-radius:16px; background:var(--color-adoquin,#2b3a52); color:var(--color-on-adoquin,#f6f4ef); font-variant-numeric:tabular-nums; } .ds-total .r { display:flex; justify-content:space-between; font-size:14px; color:var(--color-on-adoquin-2,#c4ccda); } .ds-total .t { display:flex; justify-content:space-between; align-items:baseline; margin-top:4px; } .ds-total .t span { font-weight:600; } .ds-total b { font-size:44px; line-height:1; letter-spacing:-0.02em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Calle del Viejo San Juan",
+    "overview": "StockPOS se siente como una calle del Viejo San Juan sin disfrazarse de postal: el armazón es adoquín azul pizarra, el suelo es cal cálida, y cada tienda tiene su fachada de color. El color de fachada es identidad, no decoración: pinta la franja superior, la selección y los acentos de la tienda activa, y al cambiar de tienda la franja se repinta (520 ms, ease-out expo). El cajero sabe dónde está por el color antes de leer el nombre.\n\nEs una herramienta de mostrador en modo operación: densidad media, objetivos táctiles de 44 px o más, cifras tabulares grandes y un TOTAL que se lee desde un paso atrás. Rechaza el gris con un solo acento típico de la categoría; el contraste viene del par adoquín/cal, no de bordes ni sombras. Rojo, ámbar y verde existen solo para decir algo (agotado, bajo alerta, cambio a devolver), nunca como adorno.",
+    "keyCharacteristics": [
+      "Rail y botones de acción en adoquín; lienzo en cal; superficies de trabajo en blanco con un anillo de línea fino.",
+      "Seis fachadas por tienda (coral, mango, turquesa, verde mar, lila, rosa) que cambian el acento entero vía `data-facade` en `<html>`.",
+      "Una sola familia, Figtree Variable, con cifras tabulares en todo número de dinero o cantidad.",
+      "Plano por defecto; sombra solo para lo que flota (hoja, barra de carrito, toast) o responde al hover.",
+      "Movimiento corto y firme (150-520 ms, `cubic-bezier(0.16, 1, 0.3, 1)`), anulado con reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Fill-Selects, Deep-Points Rule",
+        "body": "Selección y estado activo usan el relleno de fachada (`ring-facade`, `bg-facade` con texto tinta). La fachada honda queda para foco, caret y texto o icono de acento pequeño; nunca como relleno de selección, porque los tonos hondos (terracota, ocre, verde botella) se confunden con rojo, ámbar y verde de estado.",
+        "section": "colors"
+      },
+      {
+        "name": "The Status-Means-Something Rule",
+        "body": "Rojo, ámbar y verde solo aparecen cuando hay un estado que comunicar. Nunca como color de categoría, decoración ni segunda marca.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Facade Rule",
+        "body": "En pantalla solo vive la fachada de la tienda activa. Nada hardcodea un hex de fachada; todo lee las variables para que el cambio de tienda repinte la app completa.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Money Rule",
+        "body": "Todo número de dinero, cantidad, porcentaje, código o referencia lleva la clase `.num` (`font-variant-numeric: tabular-nums`). Las columnas de cifras se alinean a la derecha.",
+        "section": "typography"
+      },
+      {
+        "name": "The Big Total Rule",
+        "body": "La cifra que el cajero dice en voz alta (TOTAL, cambio) es el elemento tipográfico más grande de la pantalla; nada compite con ella.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-At-Rest Rule",
+        "body": "Paneles, inputs y tiles en reposo no llevan sombra; un anillo de 1 px en junta basta. La sombra aparece solo al flotar o al hover.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** leer el acento siempre de `--facade`, `--facade-deep` y `--facade-wash`; una pantalla nueva debe verse bien en las seis fachadas.",
+      "**Do** marcar selección con relleno de fachada (anillo de 3 px o fondo de fachada con texto tinta) y foco con un anillo de 2-2.5 px en fachada honda.",
+      "**Do** poner `.num` en toda cifra y alinear a la derecha las columnas de dinero y cantidad.",
+      "**Do** usar adoquín para la acción principal y para los botones de pago; blanco con anillo de junta para acciones secundarias.",
+      "**Do** mantener objetivos táctiles de 44 px o más (40 px en navegación densa) y la acción principal al alcance del pulgar.",
+      "**Do** construir profundidad con tono (cal, blanco, anillo de junta) y reservar las sombras lift y sheet para lo que flota."
+    ],
+    "donts": [
+      "**Don't** usar la fachada honda como relleno de selección, de botón o de bloque grande; se confunde con rojo, ámbar y verde de estado.",
+      "**Don't** usar rojo, ámbar o verde sin un estado detrás (agotado, bajo alerta, error, cambio, turno abierto).",
+      "**Don't** poner texto blanco sobre el relleno de fachada; mango y turquesa no lo sostienen. Texto tinta siempre.",
+      "**Don't** hardcodear un hex de fachada ni mezclar dos fachadas en la misma pantalla.",
+      "**Don't** añadir una segunda familia tipográfica ni etiquetas en mayúsculas con tracking ancho; la jerarquía es tamaño y peso de Figtree.",
+      "**Don't** dar sombra a paneles, inputs o tiles en reposo."
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/figtree';
+
+@theme {
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-adoquin: #2b3a52;
+  --color-adoquin-deep: #1f2b3f;
+  --color-adoquin-soft: #3b4c68;
+  --color-adoquin-line: #4a5b78;
+  --color-cal: #f6f4ef;
+  --color-cal-2: #ece8df;
+  --color-cal-3: #e2ddd1;
+  --color-line: #d6d0c3;
+  --color-ink: #1d2433;
+  --color-ink-2: #4a5468;
+  --color-ink-3: #6b7486;
+  --color-on-adoquin: #f6f4ef;
+  --color-on-adoquin-2: #c4ccda;
+
+  --color-bad: #b42318;
+  --color-bad-wash: #fdecea;
+  --color-warn: #a15c07;
+  --color-warn-wash: #fdf3dc;
+  --color-good: #1f7a4d;
+  --color-good-wash: #e3f3ea;
+
+  --color-facade: var(--facade);
+  --color-facade-deep: var(--facade-deep);
+  --color-facade-wash: var(--facade-wash);
+
+  --radius-tile: 14px;
+  --shadow-lift: 0 1px 2px rgb(29 36 51 / 0.06), 0 6px 18px -8px rgb(29 36 51 / 0.18);
+  --shadow-sheet: 0 -8px 40px -12px rgb(29 36 51 / 0.35);
+}
+
+/* Colores de fachada: cada tienda pinta su franja. */
+:root, [data-facade='coral'] { --facade: #e58a70; --facade-deep: #a8432c; --facade-wash: #fbe9e3; }
+[data-facade='mango'] { --facade: #f1b84a; --facade-deep: #8a5a0b; --facade-wash: #fdf1d8; }
+[data-facade='turquesa'] { --facade: #57bdb6; --facade-deep: #146b67; --facade-wash: #def3f1; }
+[data-facade='verdemar'] { --facade: #74bb8e; --facade-deep: #2b6a43; --facade-wash: #e2f2e7; }
+[data-facade='lila'] { --facade: #b19bd8; --facade-deep: #634994; --facade-wash: #eee8f7; }
+[data-facade='rosa'] { --facade: #ec9db0; --facade-deep: #9e3753; --facade-wash: #fae6eb; }
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--color-cal);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+::selection { background: var(--facade); color: var(--color-ink); }
+* { caret-color: var(--facade-deep); }
+:focus-visible { outline: 2.5px solid var(--facade-deep); outline-offset: 2px; border-radius: 6px; }
+.num { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' 1; }
+
+/* Barras de desplazamiento con la paleta. */
+* { scrollbar-width: thin; scrollbar-color: var(--color-cal-3) transparent; }
+.rail * { scrollbar-color: var(--color-adoquin-line) transparent; }
+
+/* El movimiento firma: la fachada se repinta al cambiar de tienda. */
+.facade-band { background: var(--facade); transition: background-color 520ms cubic-bezier(0.16, 1, 0.3, 1); }
+
+dialog::backdrop { background: rgb(31 43 63 / 0.45); backdrop-filter: blur(2px); }
+dialog[open] { animation: sheet-in 260ms cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes sheet-in { from { transform: translateY(16px); opacity: 0.4; } to { transform: none; opacity: 1; } }
+@keyframes pop { 0% { transform: scale(0.96); } 60% { transform: scale(1.02); } 100% { transform: scale(1); } }
+.pop { animation: pop 240ms cubic-bezier(0.16, 1, 0.3, 1); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+.pt-safe { padding-top: env(safe-area-inset-top); }
+input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; }
