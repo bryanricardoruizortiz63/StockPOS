@@ -1,3 +1,4 @@
+import { asset } from '../lib/util';
 import type { ReactNode } from 'react';
 
 /** Pantallas de acceso: columna de adoquín con la franja de fachada. */
@@ -6,7 +7,7 @@ export function AuthLayout({ title, intro, children }: { title: string; intro?: 
     <div className="grid min-h-dvh lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
       <div className="relative hidden flex-col justify-between overflow-hidden bg-adoquin p-10 text-on-adoquin lg:flex">
         <div className="flex items-center gap-3">
-          <img src="/icon.svg" alt="" className="size-9 rounded-lg" />
+          <img src={asset('icon.svg')} alt="" className="size-9 rounded-lg" />
           <span className="text-xl font-bold">StockPOS</span>
         </div>
         <div>
@@ -22,7 +23,7 @@ export function AuthLayout({ title, intro, children }: { title: string; intro?: 
         <div className="flex flex-1 items-center justify-center px-5 py-10">
           <div className="w-full max-w-md">
             <div className="mb-8 flex items-center gap-3 lg:hidden">
-              <img src="/icon.svg" alt="" className="size-9 rounded-lg" />
+              <img src={asset('icon.svg')} alt="" className="size-9 rounded-lg" />
               <span className="text-xl font-bold">StockPOS</span>
             </div>
             <h1 className="text-[28px] font-bold tracking-[-0.01em]">{title}</h1>

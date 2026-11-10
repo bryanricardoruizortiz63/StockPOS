@@ -1,6 +1,6 @@
 import { db } from './db';
 import { canonical, sha256, signHash, verifyHash } from './crypto';
-import { uid } from './util';
+import { appUrl, uid } from './util';
 import type { DocKind, SignedDoc } from './types';
 
 export async function createSignedDoc(
@@ -21,7 +21,7 @@ export const verificationCode = (d: Pick<SignedDoc, 'id' | 'hash'>) =>
   `${d.id.slice(0, 8)}-${d.hash.slice(0, 8)}`.toUpperCase();
 
 export const verificationUrl = (d: Pick<SignedDoc, 'id' | 'hash'>) =>
-  `${location.origin}/verificar?c=${verificationCode(d)}`;
+  appUrl(`verificar?c=${verificationCode(d)}`);
 
 export type VerifyResult =
   | { status: 'valid'; doc: SignedDoc }

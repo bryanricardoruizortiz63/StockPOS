@@ -1,5 +1,9 @@
 export const uid = () => crypto.randomUUID();
 
+/** URL absoluta dentro de la app (respeta el subdirectorio de GitHub Pages). */
+export const appUrl = (path = '') => `${location.origin}${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+export const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+
 const TZ = 'America/Puerto_Rico';
 
 /** Fecha YYYY-MM-DD en hora de Puerto Rico. */
