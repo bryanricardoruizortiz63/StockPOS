@@ -68,7 +68,7 @@ export default function ReportsPage() {
                 return (
                   <li key={m} className="mb-3 last:mb-0">
                     <div className="num flex justify-between text-[15px]"><span className="font-semibold">{methodLabel(m)}</span><span>{money(v)} <span className="text-ink-3">· {Math.round(p * 100)}%</span></span></div>
-                    <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-cal-2"><div className="h-full rounded-full bg-facade-deep" style={{ width: `${p * 100}%` }} /></div>
+                    <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-cal-2"><div className="h-full rounded-full bg-facade" style={{ width: `${p * 100}%` }} /></div>
                   </li>
                 );
               })}</ul>
@@ -136,7 +136,7 @@ function Bars({ s, kind }: { s: SalesSummary; kind: PeriodKind }) {
       <div className="flex h-44 items-end gap-[3px]" role="img" aria-label={`Gráfica de ventas por ${kind === 'year' ? 'mes' : 'día'}`}>
         {points.map((p) => (
           <div key={p.key} className="group relative flex h-full min-w-0 flex-1 flex-col justify-end">
-            <div className={clsx('rounded-t-md transition-colors', p.total ? 'bg-facade group-hover:bg-facade-deep' : 'bg-cal-2')} style={{ height: `${Math.max(2, (p.total / max) * 100)}%` }} />
+            <div className={clsx('rounded-t-md transition-colors', p.total ? 'bg-facade group-hover:bg-adoquin' : 'bg-cal-2')} style={{ height: `${Math.max(2, (p.total / max) * 100)}%` }} />
             <span className="num pointer-events-none absolute -top-7 left-1/2 hidden -translate-x-1/2 rounded-md bg-ink px-1.5 py-0.5 text-xs whitespace-nowrap text-cal group-hover:block">{money(p.total)}</span>
           </div>
         ))}

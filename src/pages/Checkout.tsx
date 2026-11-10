@@ -21,15 +21,15 @@ const METHODS: { id: PayMethod; label: string; icon: typeof Banknote }[] = [
  * sea el mismo: doble toque, reintento o pago confirmado con error de red nunca
  * generan una segunda venta ni un segundo cargo.
  */
-export function Checkout({ open, onClose, store, shiftId, employeeId, items, totals, onDone }: {
-  open: boolean; onClose: () => void; store: Store; shiftId: string; employeeId: string; items: SaleItem[]; totals: Totals; onDone: () => void;
+export function Checkout({ open, initialMethod = 'cash', onClose, store, shiftId, employeeId, items, totals, onDone }: {
+  open: boolean; initialMethod?: PayMethod; onClose: () => void; store: Store; shiftId: string; employeeId: string; items: SaleItem[]; totals: Totals; onDone: () => void;
 }) {
   const cartSig = canonical(items.map((i) => [i.productId, i.qty, i.unitPrice]));
   const keyRef = useRef<{ sig: string; key: string } | null>(null);
   if (open && (!keyRef.current || keyRef.current.sig !== cartSig)) keyRef.current = { sig: cartSig, key: uid() };
   const key = keyRef.current?.key ?? '';
 
-  const [method, setMethod] = useState<PayMethod>('cash');
+  const [method, setMethod] = useState<PayMethod>(initialMethod);
   const [tendered, setTendered] = useState<number | undefined>();
   const [ref, setRef] = useState('');
   const [last4, setLast4] = useState('');
@@ -42,9 +42,9 @@ export function Checkout({ open, onClose, store, shiftId, employeeId, items, tot
   const abort = useRef<AbortController | null>(null);
 
   useEffect(() => {
-    if (open) { setDone(null); setError(null); setTendered(undefined); setRef(''); setLast4(''); setAthState(null); setMethod('cash'); }
+    if (open) { setDone(null); setError(null); setTendered(undefined); setRef(''); setLast4(''); setAthState(null); setMethod(initialMethod); }
     return () => abort.current?.abort();
-  }, [open]);
+  }, [open, initialMethod]);
 
   const change = tendered != null ? computeChange(totals.total, tendered) : null;
 
@@ -137,7 +137,7 @@ export function Checkout({ open, onClose, store, shiftId, employeeId, items, tot
       <div role="tablist" aria-label="Método de pago" className="mt-5 grid grid-cols-3 gap-2">
         {METHODS.map((m) => (
           <button key={m.id} role="tab" aria-selected={method === m.id} disabled={busy} onClick={() => { setMethod(m.id); setError(null); setRef(''); }}
-            className={clsx('flex h-16 flex-col items-center justify-center gap-1 rounded-xl text-sm font-semibold ring-1 transition', method === m.id ? 'bg-facade-wash text-facade-deep ring-2 ring-facade-deep' : 'bg-white text-ink-2 ring-line hover:text-ink')}>
+            className={clsx('flex h-16 flex-col items-center justify-center gap-1 rounded-xl text-sm font-semibold ring-1 transition', method === m.id ? 'bg-facade-wash text-ink ring-[3px] ring-facade' : 'bg-white text-ink-2 ring-line hover:text-ink')}>
             <m.icon className="size-5" />{m.label}
           </button>
         ))}

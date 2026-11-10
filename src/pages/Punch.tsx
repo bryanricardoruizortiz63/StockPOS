@@ -71,19 +71,21 @@ export default function PunchPage() {
           <span className={clsx('size-3 rounded-full', inside ? 'bg-good' : 'bg-ink-3')} />
           <p className="font-semibold">{last === undefined ? 'Cargando…' : inside ? `Dentro desde ${fmtTime(last!.at)}` : last ? `Fuera desde ${fmtDateTime(last.at)}` : 'Sin ponches todavía'}</p>
         </div>
-        <div className="grid gap-3 p-5 sm:grid-cols-2">
-          <button onClick={startNfc} disabled={!nfcSupported() || step !== 'idle'}
-            className="flex flex-col items-center gap-2 rounded-2xl bg-adoquin px-4 py-8 text-on-adoquin transition active:scale-[0.98] disabled:opacity-45">
-            <Nfc className={clsx('size-10', step === 'nfc' && 'animate-pulse text-facade')} />
-            <span className="text-lg font-bold">{step === 'nfc' ? 'Acerca el teléfono al sticker' : `Ponchar ${inside ? 'salida' : 'entrada'} con NFC`}</span>
-            {!nfcSupported() && <span className="text-sm text-on-adoquin-2">No disponible en este navegador</span>}
-          </button>
+        <div className={clsx('grid gap-3 p-5', nfcSupported() && 'sm:grid-cols-2')}>
+          {nfcSupported() && (
+            <button onClick={startNfc} disabled={step !== 'idle'}
+              className="flex flex-col items-center gap-2 rounded-2xl bg-adoquin px-4 py-8 text-on-adoquin transition active:scale-[0.98] disabled:opacity-45">
+              <Nfc className={clsx('size-10', step === 'nfc' && 'animate-pulse text-facade')} />
+              <span className="text-lg font-bold">{step === 'nfc' ? 'Acerca el teléfono al sticker' : `Ponchar ${inside ? 'salida' : 'entrada'} con NFC`}</span>
+            </button>
+          )}
           <button onClick={() => { setError(null); setQr(true); }} disabled={step !== 'idle'}
-            className="flex flex-col items-center gap-2 rounded-2xl bg-facade-wash px-4 py-8 text-facade-deep ring-1 ring-facade/50 transition active:scale-[0.98] disabled:opacity-45">
+            className={clsx('flex flex-col items-center gap-2 rounded-2xl px-4 py-8 transition active:scale-[0.98] disabled:opacity-45',
+              nfcSupported() ? 'bg-white text-ink ring-1 ring-line' : 'bg-adoquin text-on-adoquin')}>
             <QrCode className="size-10" />
-            <span className="text-lg font-bold">Escanear QR del local</span>
-            <span className="text-sm">iPhone, tablet o sticker con QR</span>
+            <span className="text-lg font-bold">{nfcSupported() ? 'Escanear QR del local' : `Ponchar ${inside ? 'salida' : 'entrada'} con el QR del local`}</span>
           </button>
+          {!nfcSupported() && <p className="text-sm text-ink-2">Este teléfono no lee stickers NFC desde el navegador; usa el QR de la tienda.</p>}
         </div>
         {step === 'locating' && <p className="flex items-center gap-2 px-5 pb-5 text-ink-2"><MapPin className="size-4 animate-pulse" />Confirmando que estás en la tienda…</p>}
         {error && <p className="px-5 pb-5 font-medium text-bad" role="alert">{error}</p>}

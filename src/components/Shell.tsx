@@ -72,11 +72,12 @@ function FacadeBand() {
         <div className="flex min-w-0 flex-1 items-center gap-2.5">
           <StoreIcon className="size-5 shrink-0" aria-hidden />
           <StoreSwitcher />
-          <span className="hidden text-sm font-medium text-ink/75 sm:inline">· IVU {+(store.ivuRate * 100).toFixed(3)}%</span>
+          <span className="hidden text-sm font-medium text-ink sm:inline">· IVU {+(store.ivuRate * 100).toFixed(3)}%</span>
         </div>
-        <button onClick={() => nav('/turno')} className={clsx('hidden h-9 items-center gap-2 rounded-full px-3 text-sm font-semibold sm:flex', shift ? 'bg-white/55' : 'bg-ink text-cal')}>
+        <button onClick={() => nav('/turno')} className={clsx('flex h-9 items-center gap-2 rounded-full px-3 text-sm font-semibold', shift ? 'bg-white/55' : 'bg-ink text-cal')}>
           <span className={clsx('size-2 rounded-full', shift ? 'bg-good' : 'bg-facade')} />
-          {shift ? 'Turno abierto' : 'Sin turno'}
+          <span className="sm:hidden">{shift ? 'Turno' : 'Sin turno'}</span>
+          <span className="hidden sm:inline">{shift ? 'Turno abierto' : 'Sin turno'}</span>
         </button>
         <button onClick={() => nav('/avisos')} className="relative grid size-10 place-items-center rounded-full hover:bg-white/40" aria-label={`Avisos${unread ? `, ${unread} sin leer` : ''}`}>
           <Bell className="size-5" />

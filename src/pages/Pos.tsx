@@ -8,7 +8,7 @@ import { computeTotals, money, pct } from '../lib/money';
 import { isLow } from '../lib/inventory';
 import { currentShift, openShift } from '../lib/flows';
 import { clsx } from '../lib/util';
-import type { Product, SaleItem } from '../lib/types';
+import type { PayMethod, Product, SaleItem } from '../lib/types';
 import { Banner, Button, Field, MoneyInput, Sheet } from '../components/ui';
 import { Scanner } from '../components/Scanner';
 import { errMsg, useToast } from '../components/toast';
@@ -24,7 +24,7 @@ export function PosPage() {
   const [cart, setCart] = useState<Line[]>([]);
   const [scan, setScan] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
-  const [pay, setPay] = useState(false);
+  const [pay, setPay] = useState<PayMethod | null>(null);
   const search = useRef<HTMLInputElement>(null);
 
   const products = useLiveQuery(() => db.products.where('storeId').equals(store.id).toArray(), [store.id]) ?? [];
@@ -69,7 +69,7 @@ export function PosPage() {
 
   const cloneCart = (inSheet = false) => (
     <CartPanel inSheet={inSheet} cart={cart} setQty={setQty} totals={totals} ivuRate={store.ivuRate} canPay={!!shift && cart.length > 0}
-      onPay={() => { setCartOpen(false); setPay(true); }} onClear={() => setCart([])} />
+      onPay={(m) => { setCartOpen(false); setPay(m); }} onClear={() => setCart([])} />
   );
 
   return (
@@ -123,18 +123,16 @@ export function PosPage() {
                   <button
                     onClick={() => add(p)} disabled={out}
                     className={clsx('group relative flex h-full w-full flex-col overflow-hidden rounded-[var(--radius-tile)] bg-white text-left ring-1 transition-[box-shadow,transform] active:scale-[0.98] disabled:opacity-50',
-                      inCart ? 'ring-2 ring-facade-deep' : 'ring-line/70 hover:shadow-[var(--shadow-lift)]')}
+                      inCart ? 'ring-[3px] ring-facade' : 'ring-line/70 hover:shadow-[var(--shadow-lift)]')}
                   >
-                    <div className="relative aspect-[5/3] w-full bg-facade-wash">
-                      {p.photo
-                        ? <img src={p.photo} alt="" className="size-full object-cover" loading="lazy" />
-                        : <span className="absolute inset-0 grid place-items-center text-3xl font-bold text-facade-deep/70">{p.description.slice(0, 1).toUpperCase()}</span>}
-                      {inCart > 0 && <span className="num pop absolute top-2 right-2 grid min-w-7 place-items-center rounded-full bg-facade-deep px-2 py-0.5 text-sm font-bold text-white">{inCart}</span>}
-                    </div>
+                    {p.photo
+                      ? <div className="aspect-[5/3] w-full bg-cal-2"><img src={p.photo} alt="" className="size-full object-cover" loading="lazy" /></div>
+                      : <div className="h-1.5 w-full bg-facade" />}
+                    {inCart > 0 && <span className="num pop absolute top-2 right-2 grid min-w-7 place-items-center rounded-full bg-facade px-2 py-0.5 text-sm font-bold text-ink shadow-sm">{inCart}</span>}
                     <div className="flex flex-1 flex-col gap-1 p-3">
-                      <p className="line-clamp-2 text-[15px] leading-snug font-semibold">{p.description}</p>
+                      <p className="line-clamp-2 pr-8 text-[15px] leading-snug font-semibold">{p.description}</p>
                       <div className="mt-auto flex items-end justify-between gap-2 pt-1">
-                        <span className="num text-lg font-bold">{p.salePrice > 0 ? money(p.salePrice) : 'Sin precio'}</span>
+                        <span className="num text-xl font-bold">{p.salePrice > 0 ? money(p.salePrice) : 'Sin precio'}</span>
                         <span className={clsx('num text-xs font-semibold whitespace-nowrap', out ? 'text-bad' : low ? 'text-warn' : 'text-ink-3')}>{out ? 'Agotado' : `${p.quantity} disp.`}</span>
                       </div>
                     </div>
@@ -167,7 +165,7 @@ export function PosPage() {
       <Scanner open={scan} onClose={() => setScan(false)} onResult={onScan} title="Escanear producto" />
       {shift && (
         <Checkout
-          open={pay} onClose={() => setPay(false)} store={store} shiftId={shift.id} employeeId={user.id}
+          open={pay != null} initialMethod={pay ?? 'cash'} onClose={() => setPay(null)} store={store} shiftId={shift.id} employeeId={user.id}
           items={cart.map(({ stock: _s, ...l }) => { void _s; return l; })} totals={totals}
           onDone={() => { setCart([]); search.current?.focus(); }}
         />
@@ -177,7 +175,7 @@ export function PosPage() {
 }
 
 function CartPanel({ inSheet, cart, setQty, totals, ivuRate, canPay, onPay, onClear }: {
-  inSheet?: boolean; cart: Line[]; setQty: (id: string, q: number) => void; totals: ReturnType<typeof computeTotals>; ivuRate: number; canPay: boolean; onPay: () => void; onClear: () => void;
+  inSheet?: boolean; cart: Line[]; setQty: (id: string, q: number) => void; totals: ReturnType<typeof computeTotals>; ivuRate: number; canPay: boolean; onPay: (m: PayMethod) => void; onClear: () => void;
 }) {
   return (
     <>
@@ -206,13 +204,15 @@ function CartPanel({ inSheet, cart, setQty, totals, ivuRate, canPay, onPay, onCl
         <dl className="num space-y-1 text-[15px]">
           <div className="flex justify-between text-ink-2"><dt>Subtotal</dt><dd>{money(totals.subtotal)}</dd></div>
           <div className="flex justify-between text-ink-2"><dt>IVU ({pct(ivuRate)})</dt><dd>{money(totals.ivu)}</dd></div>
-          <div className="flex items-baseline justify-between pt-2"><dt className="text-lg font-bold">Total</dt><dd className="text-[34px] leading-none font-bold tracking-[-0.02em]">{money(totals.total)}</dd></div>
+          <div className="flex items-baseline justify-between pt-2"><dt className="text-lg font-bold">Total</dt><dd className="text-5xl leading-none font-bold tracking-[-0.02em]">{money(totals.total)}</dd></div>
         </dl>
-        <Button size="lg" className="mt-4 w-full" disabled={!canPay} onClick={onPay} icon={<Wallet className="size-5" />}>Cobrar</Button>
-        <div className="mt-2 flex justify-center gap-4 text-xs text-ink-3" aria-hidden>
-          <span className="flex items-center gap-1"><Banknote className="size-3.5" />Efectivo</span>
-          <span className="flex items-center gap-1"><Smartphone className="size-3.5" />ATH Móvil</span>
-          <span className="flex items-center gap-1"><CreditCard className="size-3.5" />Tarjeta</span>
+        <div className="mt-4 grid grid-cols-3 gap-2">
+          {([['cash', 'Efectivo', Banknote], ['athmovil', 'ATH Móvil', Smartphone], ['card', 'Tarjeta', CreditCard]] as const).map(([m, label, Icon]) => (
+            <button key={m} disabled={!canPay} onClick={() => onPay(m)}
+              className="flex h-16 flex-col items-center justify-center gap-1 rounded-xl bg-adoquin text-sm font-semibold text-on-adoquin transition hover:bg-adoquin-deep active:scale-[0.98] disabled:opacity-45">
+              <Icon className="size-5" />{label}
+            </button>
+          ))}
         </div>
       </div>
     </>

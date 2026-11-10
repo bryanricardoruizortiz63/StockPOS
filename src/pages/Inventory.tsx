@@ -92,9 +92,9 @@ export default function InventoryPage() {
                     <tr key={p.id} onClick={() => nav(`/inventario/${p.id}`)} className="cursor-pointer border-b border-line/60 last:border-0 hover:bg-cal">
                       <td className="px-5 py-3">
                         <Link to={`/inventario/${p.id}`} className="flex items-center gap-3" onClick={(e) => e.stopPropagation()}>
-                          <span className="grid size-11 shrink-0 place-items-center overflow-hidden rounded-xl bg-facade-wash font-bold text-facade-deep">
-                            {p.photo ? <img src={p.photo} alt="" className="size-full object-cover" /> : p.description.slice(0, 1)}
-                          </span>
+                          {p.photo
+                            ? <img src={p.photo} alt="" className="size-11 shrink-0 rounded-xl object-cover" />
+                            : <span className="h-9 w-1.5 shrink-0 rounded-full bg-facade" aria-hidden />}
                           <span className="min-w-0">
                             <span className="block truncate font-semibold">{p.description}</span>
                             {p.category && <span className="text-sm text-ink-2">{p.category}</span>}
