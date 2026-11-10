@@ -68,7 +68,7 @@ export default function TransferPage() {
           <fieldset className="flex flex-col gap-2">
             <legend className="mb-1.5 text-sm font-semibold">Qué exportar</legend>
             {MODES.map((m) => (
-              <label key={m.id} className={`cursor-pointer rounded-xl p-3.5 ring-1 ${mode === m.id ? 'bg-facade-wash ring-2 ring-facade-deep' : 'bg-white ring-line'}`}>
+              <label key={m.id} className={`cursor-pointer rounded-xl p-3.5 ring-1 ${mode === m.id ? 'bg-facade-wash ring-[3px] ring-facade' : 'bg-white ring-line'}`}>
                 <span className="flex items-center gap-2 font-semibold"><input type="radio" name="mode" checked={mode === m.id} onChange={() => setMode(m.id)} className="accent-[var(--facade-deep)]" />{m.title}</span>
                 <span className="mt-1 block text-sm text-ink-2">{m.body}</span>
               </label>

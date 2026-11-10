@@ -3,13 +3,12 @@ import { Loader2, X } from 'lucide-react';
 import { clsx } from '../lib/util';
 import { money, toCents } from '../lib/money';
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'facade';
+type Variant = 'primary' | 'secondary' | 'ghost' | 'danger';
 const variants: Record<Variant, string> = {
   primary: 'bg-adoquin text-on-adoquin hover:bg-adoquin-deep active:bg-adoquin-deep',
   secondary: 'bg-white text-ink ring-1 ring-line hover:bg-cal-2',
   ghost: 'text-ink-2 hover:bg-cal-2 hover:text-ink',
   danger: 'bg-bad text-white hover:bg-[#912018]',
-  facade: 'bg-facade-deep text-white hover:brightness-110',
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant; size?: 'sm' | 'md' | 'lg'; busy?: boolean; icon?: ReactNode }>(
